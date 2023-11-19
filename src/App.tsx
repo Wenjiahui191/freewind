@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "./components/Button/button";
 import Alert from "./components/Alert/alert";
-import Menu from './components/Menu/menu'
-import MenuItem from './components/Menu/menuItem'
+import Menu from "./components/Menu/menu";
+import MenuItem from "./components/Menu/menuItem";
 import "./App.scss";
 
 function App() {
@@ -41,20 +41,27 @@ function App() {
             }}
             message="This is a alert info"
           />
-          <Alert message="This is a alert info" type="success"  showIcon={false}/>
+          <Alert
+            message="This is a alert info"
+            type="success"
+            showIcon={false}
+          />
           <Alert message="This is a alert info" type="danger" />
           <Alert message="This is a alert info" type="warning" />
         </div>
-        <Menu defaultIndex={0} onSelected={(index)=>alert(index)}>
-          <MenuItem index={0} disabled>
-            list 1
-          </MenuItem>
-          <MenuItem index={1}>
+        <Menu defaultIndex={0} onSelected={(index) => alert(index)}>
+          <MenuItem index={0}>list 1</MenuItem>
+          <MenuItem index={1} disabled>
             list 2
           </MenuItem>
-          <MenuItem index={3}>
-            list 3
+          <MenuItem index={3}>list 3</MenuItem>
+        </Menu>
+        <Menu defaultIndex={0} mode="vertical">
+          <MenuItem index={0}>list 1</MenuItem>
+          <MenuItem index={1} disabled>
+            list 2
           </MenuItem>
+          <MenuItem index={3}>list 3</MenuItem>
         </Menu>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
