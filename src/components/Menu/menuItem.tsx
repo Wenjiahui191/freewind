@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { MenuContext } from "./menu";
 
 export interface MenuItemProps {
-  index?: number;
+  index?: string;
   className?: string;
   disabled?: boolean;
   style?: React.CSSProperties;
@@ -21,7 +21,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
 
   function handleClick() {
     if (context.onSelected && !disabled) {
-      context.onSelected(index);
+      context.onSelected(index || '0');
     }
   }
 
