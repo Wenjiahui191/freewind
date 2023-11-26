@@ -280,6 +280,10 @@ $tab-item-active-color: $primary !default;
 $tab-item-active-border-width: 2px !default;
 $tab-item-disabled-color: $gray-600 !default;
 
+$tab-item-card-padding-y:.35rem!default;
+$tab-item-card-padding-x: 1rem!default;
+$tab-item-card-radius: 6px!default;
+
 //input
 $input-padding-y: $btn-padding-y !default;
 $input-padding-x: $btn-padding-x !default;
