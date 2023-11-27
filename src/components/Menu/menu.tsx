@@ -10,9 +10,11 @@ export interface MenuProps {
   className?: string;
   mode?: MenuMode;
   style?: React.CSSProperties;
-  children?: JSX.Element | JSX.Element[];
+  /** 子组件 */
+  children?: React.FunctionComponentElement<MenuItemProps> | React.FunctionComponentElement<MenuItemProps>[];
   defaultOpenMenus?: string[];
-  onSelected?: MenuClickCallback;
+  /** 选择的回调 */
+  onSelected?: (selectedIndex: string) => void;
 }
 
 export interface IMenuContextProps {
@@ -24,7 +26,10 @@ export interface IMenuContextProps {
 
 export const MenuContext = createContext<IMenuContextProps>({ index: "0" });
 
-const Menu: React.FC<MenuProps> = (props) => {
+/**
+ * 菜单组件支持纵向与横向两种显示方式
+ */
+export const Menu: React.FC<MenuProps> = (props) => {
   const {
     defaultIndex,
     className,

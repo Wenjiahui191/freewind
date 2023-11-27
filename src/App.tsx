@@ -19,7 +19,9 @@ function App() {
       <header className="App-header">
         {/* <Icon them="danger" size="10x" icon={"angle-right"} /> */}
 
-        <Menu style={{ marginBottom: "200px" }}>
+        <Alert ></Alert>
+
+        {/* <Menu style={{ marginBottom: "200px" }}>
           <MenuItem>list 1</MenuItem>
           <MenuItem disabled>list 2</MenuItem>
           <SubMenu title="drop-down">
@@ -36,7 +38,7 @@ function App() {
             <MenuItem>list 4</MenuItem>
             <MenuItem>list 5</MenuItem>
           </SubMenu>
-        </Menu>
+        </Menu> */}
         {/* <Tabs>
           <TabItem label="item1">item1 content</TabItem>
           <TabItem label="item2" disabled>

@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 import classNames from "classnames";
-import TabItem, { TabItemProps } from "./tabItem";
+import  { TabItemProps } from "./tabItem";
 
 export type TabStyle = "default" | "card";
 
@@ -23,7 +23,10 @@ export const TabContext = createContext<ITabContextProps>({
   type: "default",
   index: "0",
 });
-const Tabs: React.FC<TabProps> = (props) => {
+/**
+ * Tab组件
+ */
+export const Tab: React.FC<TabProps> = (props) => {
   const { defaultIndex, type, className, style, children, onSelect } = props;
   const classes = classNames("wind-tabs", className,{
     "wind-card-tabs":type==='card'
@@ -85,9 +88,9 @@ const Tabs: React.FC<TabProps> = (props) => {
   );
 };
 
-Tabs.defaultProps = {
+Tab.defaultProps = {
   defaultIndex: "0",
   type: "default",
 };
 
-export default Tabs;
+export default Tab;

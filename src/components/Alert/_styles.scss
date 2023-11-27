@@ -6,6 +6,7 @@
     font-size: 14px;
     line-height: $alert-line-height;
     list-style: none;
+    min-width: 320px;
     display: flex;
     align-items: center;
     border: transparent $alert-border-width solid;
