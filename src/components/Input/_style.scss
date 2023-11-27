@@ -1,0 +1,105 @@
+.wind-group-input {
+  display: flex;
+
+  .input-wrapper {
+    position: relative;
+    z-index: 1;
+    .input-icon {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      color: $input-placeholder-color;
+    }
+    .input-inner {
+      margin: 0;
+      padding: $input-padding-y $input-padding-x;
+      line-height: $input-line-height;
+      border-radius: $input-border-radius;
+      color: rgba(0, 0, 0, 0.88);
+      font-size: $input-font-size;
+      list-style: none;
+      font-family: $input-font-family;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      min-width: 0;
+      background-color: #ffffff;
+      background-image: none;
+      border: $input-border-width solid $input-border-color;
+      transition: $input-transition;
+      box-sizing: border-box;
+      box-shadow: $input-box-shadow;
+
+      &:focus {
+        color: $input-focus-color;
+        background-color: $input-focus-bg;
+        border-color: $input-focus-border-color;
+        outline: 0;
+        box-shadow: $input-focus-box-shadow;
+      }
+
+      &::placeholder {
+        color: $input-placeholder-color;
+        opacity: 1;
+      }
+
+      &:disabled,
+      &[read-only] {
+        pointer-events: none;
+        border-color: $input-disabled-border-color;
+        background-color: $input-disabled-bg;
+      }
+    }
+
+    .input-icon + .input-inner {
+      padding-right: 35px;
+    }
+  }
+
+  .input-preposition,
+  .input-postposition {
+    position: relative;
+    padding: 0 11px;
+    display: flex;
+    align-items: center;
+    color: $input-group-addon-color;
+    font-weight: normal;
+    font-size: $input-font-size;
+    text-align: center;
+    background-color: $input-group-addon-bg;
+    border: 1px solid $input-group-addon-border-color;
+    border-radius: $input-border-radius;
+    transition: all 0.3s;
+    line-height: 1.5;
+  }
+}
+
+.input-group-pre {
+  & > :first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-inline-end: 0;
+  }
+  .input-wrapper {
+    .input-inner {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
+
+.input-group-end {
+  & > :last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-inline-start: 0;
+  }
+  .input-wrapper {
+    .input-inner {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}

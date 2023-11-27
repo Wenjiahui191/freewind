@@ -8,7 +8,11 @@ const meta: Meta<typeof Button> = {
   component: Button,
   tags: ["autodocs"],
   argTypes: {
-    onClick: { action: "clicked" ,description:'回调函数',control:'function'},
+    onClick: {
+      action: "clicked",
+      description: "回调函数",
+      control: "function",
+    },
   },
 };
 export default meta;
