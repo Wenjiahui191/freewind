@@ -39,6 +39,23 @@ export const DisabledInput: Story = {
   },
 };
 
+export const BigInput: Story = {
+  name: "大号输入框",
+  args: {
+    size: 'lg',
+    placeholder: "请输入...",
+  },
+};
+
+export const SmallInput: Story = {
+  name: "小号输入框",
+  args: {
+    size: 'sm',
+    placeholder: "请输入...",
+  },
+};
+
+
 export const InputWithPreAndEnd: Story = {
   name: "前置与后置内容",
   args: {

@@ -103,3 +103,24 @@
     }
   }
 }
+
+.input-lg{
+  .input-wrapper{
+    .input-inner{
+      padding: $input-padding-y-lg $input-padding-x-lg;
+      border-radius: $input-border-radius-lg;
+      font-size: $input-font-size-lg;
+    }
+  }
+}
+
+
+.input-sm{
+  .input-wrapper{
+    .input-inner{
+      padding: $input-padding-y-sm $input-padding-x-sm;
+      border-radius: $input-border-radius-sm;
+      font-size: $input-font-size-sm;
+    }
+  }
+}

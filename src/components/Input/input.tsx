@@ -1,6 +1,5 @@
 import { ChangeEvent, FC, InputHTMLAttributes, ReactElement } from "react";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { placeholder } from "@babel/types";
 import classNames from "classnames";
 import Icon from "../Icon/icon";
 
@@ -41,6 +40,10 @@ export const Input: FC<InputPropsTypes> = (props) => {
     "input-group-pre": !!preposition,
     "input-group-end": !!postposition,
   });
+
+  if("value" in props){
+    delete restProps.defaultValue
+  }
 
   return (
     <div className={classes}>

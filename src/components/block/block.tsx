@@ -1,11 +1,6 @@
 import React, { CSSProperties } from "react";
-import { JsxElement } from "typescript";
 
-export interface IBlockProps{
-    children:JSX.Element | JSX.Element[]
-}
-
-export type BlockProps=IBlockProps & React.HTMLAttributes<HTMLDivElement>
+export type BlockProps= React.HTMLAttributes<HTMLDivElement>
 
 const Block:React.FC<BlockProps>=({children}) => { 
 
