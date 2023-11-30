@@ -1,0 +1,30 @@
+.wind-auto-complete {
+
+    ul,
+    li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .suggest-dropdown {
+        background-color: #fff;
+        border-radius: 8px;
+        margin-top: 4px;
+        box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.35);
+
+        .suggest-item {
+            padding: 10px 16px 10px;
+            cursor: pointer;
+            &:hover{
+                background-color: $primary;
+                color: $white;
+            }
+        }
+
+        .is-active {
+            background-color: $primary;
+            color: $white;
+        }
+    }
+}

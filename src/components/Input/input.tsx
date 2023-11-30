@@ -42,6 +42,9 @@ export const Input: FC<InputPropsTypes> = (props) => {
   });
 
   if("value" in props){
+    if(!props.value){
+      restProps.value=""
+    }
     delete restProps.defaultValue
   }
 
