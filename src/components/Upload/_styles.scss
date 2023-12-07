@@ -1,0 +1,64 @@
+.wind-upload-dragger{
+    background: $gray-100;
+    border: 1px dashed $gray-300;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 20px;
+    width: 360px;
+    height: 180px;
+    text-align: center;
+    &:hover {
+      border: 1px dashed $primary;
+    }
+    &.is-dragover {
+      border: 2px dashed $primary;
+      background: rgba($primary, .2);
+    }
+}
+
+.wind-upload-list-wrapper {
+    .upload-list-item {
+        height: 28px;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+
+        .file-icon {
+            margin-right: 5px;
+        }
+
+        .file-name {
+            flex: 1;
+            margin-right: 5px;
+        }
+
+        .file-status {}
+
+        .file-remove {
+            display: none;
+            cursor: pointer;
+            width: 14px;
+            text-align: center;
+        }
+
+        &:hover {
+            background-color: #f5f5f5;
+
+            .file-status {
+                display: none;
+            }
+
+            .file-remove {
+                display: block;
+            }
+        }
+    }
+
+    @each $key,
+    $val in $theme-colors {
+        .progress-bar-#{$key} {
+            background-color: $val;
+        }
+    }
+
+}

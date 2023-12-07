@@ -18,36 +18,48 @@ const testProps: AutoCompleteProps = {
   placeholder: "auto-complete",
 };
 
-let resultDom:HTMLElement
+let resultDom: HTMLElement;
 let inputNode: HTMLInputElement;
 describe("test complete", () => {
   beforeEach(() => {
-    const {container}=render(<AutoComplete {...testProps} />);
-    resultDom=container
+    const { container } = render(<AutoComplete {...testProps} />);
+    resultDom = container;
     inputNode = screen.getByPlaceholderText("auto-complete");
   });
 
   it("test basic AutoComplete behavior", async () => {
     fireEvent.change(inputNode, { target: { value: "AA" } });
     await waitFor(() => {
-        expect(screen.getByText("AA")).toBeInTheDocument()
+      expect(screen.getByText("AA")).toBeInTheDocument();
     });
-    expect(resultDom.querySelectorAll('.suggest-item').length).toEqual(2)
+    expect(resultDom.querySelectorAll(".suggest-item").length).toEqual(2);
     // click first item
-    fireEvent.click(screen.getByText("AA"))
-    expect(screen.queryByText("AA")).not.toBeInTheDocument()
-    expect(testProps.onSelect).toHaveBeenCalled()
-    expect(inputNode.value).toBe("AA")
+    fireEvent.click(screen.getByText("AA"));
+    expect(screen.queryByText("AA")).not.toBeInTheDocument();
+    expect(testProps.onSelect).toHaveBeenCalled();
+    expect(inputNode.value).toBe("AA");
   });
 
-  it("test keyboard behavior",async() => { 
+  it("test keyboard behavior", async () => {
     fireEvent.change(inputNode, { target: { value: "AA" } });
     await waitFor(() => {
-        expect(screen.getByText("AA")).toBeInTheDocument()
+      expect(screen.getByText("AA")).toBeInTheDocument();
     });
-    fireEvent.keyDown(inputNode)
-    expect(screen.getByText("AA")).toHaveClass("is-active")
-    expect(screen.getByText("AA")).not.toHaveClass("is-active")
-    expect(screen.getByText("AABB")).toHaveClass("is-active")
-   })
+    fireEvent.keyDown(inputNode, { keyCode: 40 });
+    expect(screen.getByText("AA")).toHaveClass("is-active");
+    fireEvent.keyDown(inputNode, { keyCode: 40 });
+    expect(screen.getByText("AA")).not.toHaveClass("is-active");
+    expect(screen.getByText("AABB")).toHaveClass("is-active");
+    fireEvent.keyDown(inputNode, { keyCode: 27 });
+    expect(screen.queryByText("AA")).not.toBeInTheDocument();
+  });
+
+  it("test click outside should dropdown close", async () => {
+    fireEvent.change(inputNode, { target: { value: "AA" } });
+    await waitFor(() => {
+      expect(screen.getByText("AA")).toBeInTheDocument();
+    });
+    fireEvent.click(document)
+    expect(screen.queryByText("AA")).not.toBeInTheDocument()
+  });
 });

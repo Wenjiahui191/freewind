@@ -1,0 +1,17 @@
+.wind-progress-wrapper {
+    width: 100%;
+    box-sizing: content-box;
+    .progress-bg {
+        position: relative;
+        font-size: $progress-font-size;
+        color: $progress-bar-color;
+        border-radius: $progress-border-radius;
+        background-color: $progress-bg;
+        overflow: hidden;
+
+        .progress-bar {
+            transform: $progress-bar-transition;
+            padding-left: 10px;
+        }
+    }
+}
