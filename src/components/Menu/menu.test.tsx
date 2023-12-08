@@ -12,6 +12,20 @@ import MenuItem from "./menuItem";
 import SubMenu from "./subMenu";
 import { wait } from "@testing-library/user-event/dist/utils";
 
+jest.mock('../Icon/icon', () => {
+  return () => {
+    return <i className="fa" />
+  }
+})
+
+jest.mock('react-transition-group', () => {
+  return {
+    CSSTransition: (props: any) => {
+      return props.children
+    }
+  }
+})
+
 const testMenuProps: MenuProps = {
   defaultIndex: "0",
   className: "default",
